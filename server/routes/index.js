@@ -1,5 +1,8 @@
-const reviews = require('./reviews.js');
+const getReviews = require('./reviews.js');
+const Router = require('express-promise-router');
 
-module.exports = app => {
-  app.use('/reviews', reviews);
-}
+const router = Router();
+
+router.get('/reviews', getReviews);
+
+module.exports = router;
