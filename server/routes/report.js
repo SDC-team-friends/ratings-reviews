@@ -7,7 +7,7 @@ const putReport = (req, res) => {
     UPDATE reviews SET reported = true WHERE id = ${review_id};
   `)
   .then(() => {
-    res.send('Reported');
+    res.status(204).send(`Status: ${res.status} NO CONTENT`);
   })
 }
 

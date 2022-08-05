@@ -1,8 +1,30 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "express-promise-router": "^4.1.1",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3"
-  }
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  },
+  "name": "ratings-reviews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "server": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDC-team-friends/ratings-reviews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SDC-team-friends/ratings-reviews/issues"
+  },
+  "homepage": "https://github.com/SDC-team-friends/ratings-reviews#readme",
+  "description": ""
 }

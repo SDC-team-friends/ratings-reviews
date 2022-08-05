@@ -38,13 +38,16 @@ const getReviews = (req, res) => {
           image_objects AS (SELECT row_to_json(images) FROM images)
           SELECT json_agg(row_to_json) FROM image_objects)
         )
-        )
-        FROM review_page
-      )) AS reviews
+      )
+      FROM review_page
+    )) AS reviews
     ;
   `)
   .then((results) => {
     res.send(results.rows[0].reviews);
+  })
+  .catch((error) => {
+    res.send(error);
   })
 }
 
@@ -83,7 +86,7 @@ const postReview = (req, res) => {
     ;`
   )
   .then(() => {
-    res.send('Posted');
+    res.status(201).send(`Status: ${res.status} CREATED`);
   })
   .catch((err) => {
     console.error(err);

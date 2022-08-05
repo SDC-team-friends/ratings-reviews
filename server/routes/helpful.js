@@ -7,7 +7,10 @@ const putHelpful = (req, res) => {
     UPDATE reviews SET helpfulness = helpfulness + 1 WHERE id = ${review_id};
   `)
   .then(() => {
-    res.send('Marked as helpful');
+    res.status(204).send(`Status: ${res.status} NO CONTENT`);
+  })
+  .catch((error) => {
+    res.send(error);
   })
 }
 
