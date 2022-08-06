@@ -1,14 +1,17 @@
+require('dotenv').config();
 const {Pool} = require('pg');
 
 const pool = new Pool({
-  user: 'noatongi',
-  host: 'localhost',
-  database: 'sdc',
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 });
 
 pool.connect((err) => {
   if (err) {
-    console.error(err);
+    console.log('Pool error: ', err);
   }
 })
 

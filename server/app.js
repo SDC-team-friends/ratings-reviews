@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const {Pool, Client} = require('pg');
 const mountRoutes = require('./routes/index.js')
@@ -11,6 +12,6 @@ app.get('/test', (req, res) => {
   res.send('test endpoint');
 })
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
+app.listen(process.env.PORT , () => {
+  console.log(`Listening on port ${process.env.PORT}`);
 })
