@@ -2,7 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 
 test('Should return an object with the correct format on get request', async() => {
-  await axios.get(`http://localhost:3000/reviews?product_id=40404`)
+  await axios.get(`http://localhost:${process.env.PORT}/reviews?product_id=40404`)
   .then((results) => {
     let {data} = results;
     expect(data).toMatchObject({
